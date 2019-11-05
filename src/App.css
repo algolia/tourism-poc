@@ -2,17 +2,18 @@ em {
   background: cyan;
   font-style: normal;
 }
-
 .header {
   display: flex;
   align-items: center;
   min-height: 50px;
   padding: 0.5rem 1rem;
-  background-image: linear-gradient(to right, #8e43e7, #00aeff);
+  /* background-image: linear-gradient(to right, #8e43e7, #00aeff); */
   color: #fff;
   margin-bottom: 1rem;
+  border-bottom: 1px solid #E4E4E4;
+  height: 85px;
+  position: relative;
 }
-
 .header a {
   color: #fff;
   text-decoration: none;
@@ -31,19 +32,64 @@ em {
 .header-subtitle {
   font-size: 1.2rem;
 }
-
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 1rem;
+.info-area {
+  height: 70px;
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif
 }
-
+.container {
+  /* margin: 0 auto; */
+}
+.left-container {
+  left: 0;
+  width: 50%;
+  /* padding-left: 1em; */
+}
+.right-container {
+  left: 100;
+  width: 50%
+}
+.hit-container {
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+}
+.hit-header {
+}
+.hit-reviews {
+  text-align: right;
+}
+.hit-left-container {
+  position: relative;
+}
+.hit-right-container {
+  float: right;
+  color: #E4E4E4;
+}
+.hit-type {
+  padding-bottom: 4px;
+  font-size: 14px;
+}
+.hit-title {
+  color: black;
+  font-size: 20px;
+  line-height: 1.43;
+  padding-bottom: 8px;
+}
+.hit-description {
+  font-size: 14px;
+}
+.hit-price {
+  font-weight: 600;
+  font-size: 20px;
+  position: absolute;
+  bottom: 0px;
+}
 .search-panel {
   display: flex;
 }
 
 .search-panel__filters {
-  flex: 1;
+  /* flex: 1; */
 }
 
 .search-panel__results {
@@ -51,10 +97,38 @@ em {
 }
 
 .searchbox {
-  margin-bottom: 2rem;
+  width: 450px;
+
 }
 
 .pagination {
   margin: 2rem auto;
   text-align: center;
 }
+/* --------- AIS --------- */
+.ais-SearchBox {
+  border-radius: 1px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  background-color: #ffffff;
+  height: 45px;
+}
+.ais-SearchBox-input {
+  border-radius: 1px;
+  border: 1px solid #E4E4E4;
+  height: 45px;
+  padding-left: 3rem;
+  line-height: 1.45;
+  font-size: 18px;
+  font-weight: 600;
+}
+.ais-Hits-item {
+  width:100%;
+  border: none;
+  box-shadow: none;
+  border-top: 1px solid #E4E4E4;
+  border-bottom: 1px solid #E4E4E4;
+  height: 250px;
+  margin-left: -15px;
+
+}
+/* --------- bootstrap --------- */

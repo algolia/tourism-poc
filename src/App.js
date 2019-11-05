@@ -5,11 +5,14 @@ import {
   Hits,
   SearchBox,
   Pagination,
+  Index,
+  connectHits,
+  Configure
 } from 'react-instantsearch-dom';
-import PropTypes from 'prop-types';
 import './App.css';
+import './bootstrap.min.css';
 import { appID, API_KEY } from './config'
-
+import Hit from './Hits.js'
 
 const searchClient = algoliasearch(
   appID,
@@ -20,54 +23,39 @@ class App extends Component {
   render() {
     return (
       <div>
-        <header className="header">
-          <h1 className="header-title">
-            <a href="/">Tourism</a>
-          </h1>
-          <p className="header-subtitle">
-            using{' '}
-            <a href="https://github.com/algolia/react-instantsearch">
-              React InstantSearch
-            </a>
-          </p>
-        </header>
-
-        <div className="container">
-          <InstantSearch searchClient={searchClient} indexName="airbnb">
-            <div className="search-panel">
-              <div className="search-panel__results">
-                <SearchBox
-                  className="searchbox"
-                  translations={{
-                    placeholder: '',
-                  }}
-                />
-                <Hits hitComponent={Hit} />
-
-                <div className="pagination">
-                  <Pagination />
+        <InstantSearch searchClient={searchClient} indexName="airbnb">
+          <header className="header">
+            <h1 className="header-title">
+              <a href="/">Tourism Placeholder</a>
+            </h1>
+            <SearchBox
+              className="searchbox"
+              translations={{
+                placeholder: '',
+              }}
+            />
+          </header>
+          <div>
+            <div className="left-container">
+              <div className="info-area">
+                Stats
+              </div>
+              <div className="search-panel">
+                <div className="search-panel__results">
+                  <Hits hitComponent={Hit} />
+                  <div className="pagination">
+                    <Pagination />
+                  </div>
                 </div>
               </div>
             </div>
-          </InstantSearch>
-        </div>
+            <div className="right-container">
+            </div>
+          </div>
+        </InstantSearch>
       </div>
     );
   }
 }
-
-function Hit(props) {
-  return (
-    <article>
-      <p>
-        <code>{JSON.stringify(props.hit).slice(0, 100)}...</code>
-      </p>
-    </article>
-  );
-}
-
-Hit.propTypes = {
-  hit: PropTypes.object.isRequired,
-};
 
 export default App;
