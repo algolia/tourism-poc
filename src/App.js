@@ -5,9 +5,7 @@ import {
   Hits,
   SearchBox,
   Pagination,
-  Index,
-  connectHits,
-  Configure
+  Stats
 } from 'react-instantsearch-dom';
 import './App.css';
 import './bootstrap.min.css';
@@ -38,7 +36,7 @@ class App extends Component {
           <div>
             <div className="left-container">
               <div className="info-area">
-                Stats
+                <Stats />
               </div>
               <div className="search-panel">
                 <div className="search-panel__results">
