@@ -11,6 +11,13 @@ import './App.css';
 import './bootstrap.min.css';
 import { appID, API_KEY } from './config'
 import Hit from './Hits.js'
+import MapContainer from './MapContainer'
+import { Map, GoogleApiWrapper } from 'google-maps-react';
+
+const mapStyles = {
+  width: '100%',
+  height: '100%',
+};
 
 const searchClient = algoliasearch(
   appID,
@@ -34,20 +41,27 @@ class App extends Component {
             />
           </header>
           <div>
-            <div className="left-container">
-              <div className="info-area">
-                <Stats />
-              </div>
-              <div className="search-panel">
-                <div className="search-panel__results">
-                  <Hits hitComponent={Hit} />
-                  <div className="pagination">
-                    <Pagination />
+            <div className="info-area">
+              <Stats />
+            </div>
+            <div className="container">
+              <div className="left-container">
+                <div className="search-panel">
+                  <div className="search-panel__results">
+                    <Hits hitComponent={Hit} />
+                    <div className="pagination">
+                      <Pagination />
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
-            <div className="right-container">
+              <div className="right-container">
+                <div className="map-panel">
+                  <div className="map-panel__results">
+                    <MapContainer />
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </InstantSearch>

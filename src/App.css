@@ -35,21 +35,25 @@ em {
 .info-area {
   height: 70px;
   padding-left: 30px;
-
-  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+  border-bottom: 1px solid #E4E4E4;
 }
 .container {
-  /* margin: 0 auto; */
+  width: 100% !important;
+  display: flex;
+  flex-direction: row;
+  margin: 0px !important;
 }
 .left-container {
-  left: 0;
-  width: 50%;
-  position: relative;
-  /* padding-left: 1em; */
+  flex: 1;
+  /* left: 0; */
+  width: 100%;
+  /* position: relative; */
 }
 .right-container {
-  left: 100;
-  width: 50%
+  flex: 1;
+  position: relative;
+  /* width: 100%; */
 }
 .hit-container {
   display: flex;
@@ -94,6 +98,13 @@ em {
 .search-panel {
   display: flex;
 }
+.map-panel {
+  display: flex;
+}
+.search-panel__results {
+  flex: 3;
+}
+
 
 .search-panel__filters {
   /* flex: 1; */
